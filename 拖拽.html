@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            height: 200px;
+            width: 200px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">我是BOX</div>
+    <script>
+        var box = document.getElementById("box");
+        
+        box.onmousedown=function(){
+            var clickEvent = window.event||arguments[0];
+            var offsetX = clickEvent.offsetX;
+            var offsetY = clickEvent.offsetY;
+            clickEvent.preventDefault();
+            
+            document.onmousemove=function(){
+                var downEvent = window.event||arguments[0];
+                box.style.left = downEvent.clientX-offsetX+"px";
+                box.style.top = downEvent.clientY-offsetY+"px";
+            }
+        }
+
+        box.onmouseup=function(){
+            document.onmousemove=null;
+        }
+    </script>
+</body>
+</html>

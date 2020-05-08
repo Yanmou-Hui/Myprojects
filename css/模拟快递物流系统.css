@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom,skyblue,#fff);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.car{
+    width: 100%;
+}
+
+.run{
+    animation: run 10s linear infinite;
+}
+
+@keyframes run{
+    0%{transform: translate(0);}
+    100%{transform: translate(1500px);}
+}
+
+ul{
+    list-style: none;
+    width: 600px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+li{
+    float: left;
+    width: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid gray;
+    background-color: #fff;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    display: block;
+    height: 100%;
+    position: relative;
+}
+
+ul li:last-child{
+    border: none;
+}
+
+i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #bfbfbf;
+    transition: all .2s linear;
+}
+
+i::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #bfbfbf;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    transition: transform .2s linear,border-color .2s linear .2s;
+}
+
+span{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+li:hover{
+    background-color: yellow;
+    border: yellow;
+}
+
+li:hover span{
+    opacity: 0;
+}
+
+li:hover i::after{
+    transform: translate(-50%,-50%) scale(1.5);
+    border-color: transparent;
+}
+
+li:hover i{
+    font-size: 44px;
+    color: black;
+}
+
+.close1 , .close2{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 110%;
+    display: none;
+}
+
+.close1 img{
+    width: 300px;
+    height: 400px;
+}
+
+.close1 p{
+    font-size: 20px;
+    position: absolute;
+    bottom: 150px;
+    left: 30px;
+}
+
+.close2 p{
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: -70px;
+}
+
+.close3{
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 110%;
+    right: 18%;
+    display: none;
+}
+
+.close3 p{
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: -70px;
+}
+
+.rotate{
+    animation: rotate 3s ease 3;
+}
+
+@keyframes rotate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+.scale{
+    animation: scale 2s linear 3;
+}
+
+@keyframes scale{
+    0%{transform: scale(0) rotate(0deg);}
+    25%{transform: scale(0.5) rotate(45deg);}
+    50%{transform: scale(1) rotate(-45deg);}
+    100%{transform: scale(1.5) rotate(0deg);}
+}
+
+.translate{
+    animation: translate 2s 6s ease-out 3;
+}
+
+@keyframes translate{
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(20px);}
+    100%{transform: translateY(0px)}
+}
+
+.translateX{
+    animation: translate2 2s 4s ease 3;
+}
+
+@keyframes translate2{
+    0%{transform: rotateY(180deg) translateX(0px);}
+    49%{transform: rotateY(180deg) translateX(500px);}
+    50%{transform: rotateY(360deg) translateX(-500px);}
+    100%{transform: rotateY(360deg) translateX(0px);}
+}
